@@ -6,6 +6,7 @@ type CallbackFunc = extern "C" fn(*const c_char, c_ulong);
 pub extern "C" fn function_with_callback(key: *const c_char, val: c_ulong, callback: CallbackFunc) {
     if callback as usize != 0 && !key.is_null() {
         callback(key, val);
+        callback(key, val);
     }
 }
 
